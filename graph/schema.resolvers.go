@@ -82,10 +82,10 @@ func (r *myQueryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 }
 
 // MyMutation returns generated.MyMutationResolver implementation.
-func (r *graph.Resolver) MyMutation() generated.MyMutationResolver { return &myMutationResolver{r} }
+func (r *Resolver) MyMutation() generated.MyMutationResolver { return &myMutationResolver{r} }
 
 // MyQuery returns generated.MyQueryResolver implementation.
-func (r *graph.Resolver) MyQuery() generated.MyQueryResolver { return &myQueryResolver{r} }
+func (r *Resolver) MyQuery() generated.MyQueryResolver { return &myQueryResolver{r} }
 
 type myMutationResolver struct{ *Resolver }
 type myQueryResolver struct{ *Resolver }
