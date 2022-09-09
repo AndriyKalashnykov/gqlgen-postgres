@@ -1,11 +1,8 @@
 package main
 
 import (
-	"context"
-	"github.com/99designs/gqlgen/graphql"
 	"github.com/AndriyKalashnykov/gqlgen-postgres/graph"
 	"github.com/AndriyKalashnykov/gqlgen-postgres/graph/generated"
-	"github.com/AndriyKalashnykov/gqlgen-postgres/graph/model"
 	"github.com/AndriyKalashnykov/gqlgen-postgres/pkg/postgres"
 	"log"
 	"net/http"
@@ -41,7 +38,7 @@ func main() {
 	}
 
 	config := generated.Config{Resolvers: &graph.Resolver{ToDo: toDoService}}
-	config.Directives.HasRole = hasRoleDirective
+	//config.Directives.HasRole = hasRoleDirective
 
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(config))
 
@@ -52,7 +49,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
-func hasRoleDirective(ctx context.Context, obj interface{}, next graphql.Resolver, role model.Role) (res interface{}, err error) {
-	log.Printf("Inside hasRoleDirective - ignore the role check for now")
-	return next(ctx)
-}
+//func hasRoleDirective(ctx context.Context, obj interface{}, next graphql.Resolver, role model.Role) (res interface{}, err error) {
+//	log.Printf("Inside hasRoleDirective - ignore the role check for now")
+//	return next(ctx)
+//}
