@@ -6,7 +6,6 @@ services:
       - "5432:5432"
     volumes:
       - db:/var/lib/postgresql/data
-#      - "./internal/pkg/postgres/migrations:/var/lib/postgresql/data"
     environment:
       - POSTGRES_DB=graphql
       - POSTGRES_USER=graphql_api
