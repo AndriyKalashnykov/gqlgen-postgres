@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"github.com/AndriyKalashnykov/gqlgen-postgres/pkg/todo"
+	"github.com/AndriyKalashnykov/gqlgen-postgres/internal/pkg/todo"
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/postgres"
 	_ "github.com/golang-migrate/migrate/v4/database/postgres"
@@ -41,7 +41,7 @@ func (t *ToDoImpl) Initialise() error {
 	log.Printf("Target database schema version is: %d and current database schema version is: %d", targetSchemaVersion, version)
 	if version != targetSchemaVersion {
 		log.Printf("Migrating database schema from version: %d to version %d", version, targetSchemaVersion)
-		m, err := migrate.NewWithDatabaseInstance("file://../../pkg/postgres/migrations", t.DbName, driver)
+		m, err := migrate.NewWithDatabaseInstance("file://./internal/pkg/postgres/migrations", t.DbName, driver)
 		if err != nil {
 			return err
 		}

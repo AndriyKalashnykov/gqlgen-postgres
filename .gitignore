@@ -1,5 +1,5 @@
 .bin/
 .idea/
 server
-#graph/generated/
-#graph/model/
+graph/generated
+graph/model

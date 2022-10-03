@@ -1,12 +1,15 @@
 version: '3'
 services:
   postgres:
-    image: "postgres:13.0"
+    image: "postgres:14.3-alpine"
     ports:
       - "5432:5432"
     volumes:
-      - "./.data/docker-data/postgres:/var/lib/postgresql/data"
+      - db:/var/lib/postgresql/data
+#      - "./internal/pkg/postgres/migrations:/var/lib/postgresql/data"
     environment:
       - POSTGRES_DB=graphql
       - POSTGRES_USER=graphql_api
       - POSTGRES_PASSWORD=_please_change_me_now_
+volumes:
+  db:

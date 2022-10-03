@@ -6,14 +6,15 @@ package graph
 import (
 	"context"
 	"fmt"
-	"github.com/AndriyKalashnykov/gqlgen-postgres/graph/generated"
-	"github.com/AndriyKalashnykov/gqlgen-postgres/graph/model"
 	"log"
 
-	"github.com/AndriyKalashnykov/gqlgen-postgres/pkg/todo"
+	"github.com/AndriyKalashnykov/gqlgen-postgres/graph/generated"
+	"github.com/AndriyKalashnykov/gqlgen-postgres/graph/model"
+	"github.com/AndriyKalashnykov/gqlgen-postgres/internal/pkg/todo"
 	"github.com/google/uuid"
 )
 
+// CreateTodo is the resolver for the createTodo field.
 func (r *myMutationResolver) CreateTodo(ctx context.Context, todo model.TodoInput) (*model.Todo, error) {
 	id, err := r.ToDo.Create(todo.Text, *todo.Done)
 	if err != nil {
@@ -28,6 +29,7 @@ func (r *myMutationResolver) CreateTodo(ctx context.Context, todo model.TodoInpu
 	}
 }
 
+// UpdateTodo is the resolver for the updateTodo field.
 func (r *myMutationResolver) UpdateTodo(ctx context.Context, id string, updatedTodo model.TodoInput) (*model.Todo, error) {
 	_, err := uuid.Parse(id)
 	if err != nil {
@@ -46,6 +48,7 @@ func (r *myMutationResolver) UpdateTodo(ctx context.Context, id string, updatedT
 	}
 }
 
+// Todo is the resolver for the todo field.
 func (r *myQueryResolver) Todo(ctx context.Context, id string) (*model.Todo, error) {
 	_, err := uuid.Parse(id)
 	if err != nil {
@@ -63,6 +66,7 @@ func (r *myQueryResolver) Todo(ctx context.Context, id string) (*model.Todo, err
 	}
 }
 
+// Todos is the resolver for the todos field.
 func (r *myQueryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
 	var items []*model.Todo
 	var savedItems []todo.ToDoItem

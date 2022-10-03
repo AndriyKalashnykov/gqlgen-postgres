@@ -1,6 +1,8 @@
 package graph
 
-import "github.com/AndriyKalashnykov/gqlgen-postgres/pkg/todo"
+import (
+	"github.com/AndriyKalashnykov/gqlgen-postgres/internal/pkg/todo"
+)
 
 // This file will not be regenerated automatically.
 //

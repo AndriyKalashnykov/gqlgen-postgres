@@ -3,11 +3,11 @@ module github.com/AndriyKalashnykov/gqlgen-postgres
 go 1.18
 
 require (
-	github.com/99designs/gqlgen v0.17.16
+	github.com/99designs/gqlgen v0.17.20
 	github.com/golang-migrate/migrate/v4 v4.15.2
 	github.com/google/uuid v1.3.0
 	github.com/jackc/pgx/v4 v4.17.2
-	github.com/vektah/gqlparser/v2 v2.5.0
+	github.com/vektah/gqlparser/v2 v2.5.1
 )
 
 require (
@@ -30,8 +30,8 @@ require (
 	github.com/lib/pq v1.10.7 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
-	golang.org/x/crypto v0.0.0-20220829220503-c86fa9a7ed90 // indirect
-	golang.org/x/net v0.0.0-20220907135653-1e95f45603a7 // indirect
+	golang.org/x/crypto v0.0.0-20220926161630-eccd6366d1be // indirect
+	golang.org/x/net v0.0.0-20221002022538-bcab6841153b // indirect
 	golang.org/x/oauth2 v0.0.0-20220909003341-f21342109be1 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/appengine v1.6.7 // indirect

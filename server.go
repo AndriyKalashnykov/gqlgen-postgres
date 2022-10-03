@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/AndriyKalashnykov/gqlgen-postgres/graph"
 	"github.com/AndriyKalashnykov/gqlgen-postgres/graph/generated"
-	"github.com/AndriyKalashnykov/gqlgen-postgres/pkg/postgres"
+	"github.com/AndriyKalashnykov/gqlgen-postgres/internal/pkg/postgres"
 	"log"
 	"net/http"
 	"os"
